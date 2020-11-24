@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    .form-control{
+       width: 500px;
+    border-radius: 2px;
+    font-size: 18px;
+    }
+    .btn {
+    width: 500px;
+    }
+
+    </style>
+</head>
+<body>
+<form class="form-inline" th:action="@{/}" method="POST">
+    <table id="table">
+        <tr>
+            <td><input type="number" class="form-control" id="summa" placeholder="Введите сумму" name="summa"
+                       th:value="${summa}" required></td>
+            <td><input type="number" class="form-control" id="period" placeholder="Введите период" name="period"
+                       th:value="${period}" required></td>
+            <td>
+                <button type="submit" class="btn btn-primary btn-block">Рассчитать</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

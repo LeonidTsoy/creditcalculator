@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    td, th {
+     border: 1px ;
+     padding: 4px;
+    }
+
+    </style>
+</head>
+<body>
+<form class="form-inline">
+    <table id="table" width="100%">
+        <tr>
+            <th>Дата</th>
+            <th>Сумма за день</th>
+            <th>Общая сумма</th>
+        </tr>
+        <tr th:each="el:${z}">
+            <td th:text="${el.data}"></td>
+            <td th:text="${el.result}"></td>
+            <td th:text="${el.total}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
